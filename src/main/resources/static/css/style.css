@@ -1,8 +1,16 @@
 body{
     padding-top:20px;
-    padding-buttom:20px;
+    padding-bottom:20px;
 }
 
 .navbar{
     margin-bottom:20px;
+}
+
+.container {
+    border:2px blueviolet outset;
+}
+
+.carousel {
+
 }
