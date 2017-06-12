@@ -1,0 +1,196 @@
+//output:../index.html
+
+doctype html
+html(lang="en" xmlns:th="http://www.w3.org/1000/xhtml")
+  //- head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-compatible', content='IE=edge')
+    meta(name='viewport', content='with=device-with, initial-scale=1')
+    title BOOKSTORE
+    link(href='../static/css/bootstrap.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='../static/css/non-responsive.css')
+    
+    link(rel='stylesheet', href='../static/css/style.css')
+    link(rel='icon', href='../static/image/apple-touch-icon.png')
+  head(th:replace="common/header :: common-header")
+  body
+    .page-top(style='width: 100%; height: 20px; background-color: #f46b42;')
+    nav.navbar.navbar-default.navbar-inverse
+      .container-fluid
+        .navbar-header
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') LE'S BOOKSTORE
+        // Collect the nav links, forms, and other content for toggling
+        #navbar
+          ul.nav.navbar-nav.navbar-left
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                | BOOKS 
+                span.caret
+              ul.dropdown-menu
+                li
+                  a(href='#') Browse the bookshelf
+                li
+                  a(href='#') Store hours &#38; Directions
+                li
+                  a(href='#') FAQ
+            form.navbar-form
+              .form-group
+                input.form-control(type="text" name="keyword" placeholder="Book title")
+                button.btn.btn-default(type="submit") Search
+          ul.nav.navbar-nav.navbar-right
+            li 
+              a(href='#') SHOPPING CART
+            li 
+              a(href='#') MY ACCOUNT
+            li 
+              a(href='#') LOGOUT
+    // nav bar end
+    .container
+      .row
+        // carousel panel
+        .panel.panel-default
+          // carousel
+          .col-xs-8
+            .panel-heading
+            .panel-body
+              #carousel-example-generic.carousel.slide(data-ride='carousel')
+                // Indicators
+                ol.carousel-indicators
+                  li.active(data-target='#carousel-example-generic', data-slide-to='0')
+                  li(data-target='#carousel-example-generic', data-slide-to='1')
+                  li(data-target='#carousel-example-generic', data-slide-to='2')
+                // Wrapper for Main slides
+                .carousel-inner(role='listbox')
+                  .item.active
+                    img(src='https://unsplash.it/800/601/?random', alt='...')
+                    .carousel-caption
+                      h4 First Thumbnail Label
+                      p
+                        | Contrary to popular belief, Lorem Ipsum is not simply
+                        | random text. It has roots in a piece of classical Latin
+                        | literature from 45 BC, making it over 2000 years old.
+                  .item
+                    img(src='https://unsplash.it/800/602/?random', alt='...')
+                    .carousel-caption
+                      h4 First Thumbnail Label
+                      p
+                        | Contrary to popular belief, Lorem Ipsum is not simply
+                        | random text. It has roots in a piece of classical Latin
+                        | literature from 45 BC, making it over 2000 years old.
+                  .item
+                    img(src='https://unsplash.it/800/603/?random', alt='...')
+                    .carousel-caption
+                      h4 First Thumbnail Label
+                      p
+                        | Contrary to popular belief, Lorem Ipsum is not simply
+                        | random text. It has roots in a piece of classical Latin
+                        | literature from 45 BC, making it over 2000 years old.
+                  |                             ...
+                // Controls
+                a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
+                  span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                  span.sr-only Previous
+                a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
+                  span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                  span.sr-only Next
+          .col-xs-4
+            img.img-responsive(src='../static/image/logo.png')
+        // end of carousel panel
+      hr
+      // 3 col-xs-4 img
+      .raw
+        .col-xs-4
+          .panel.panel-default
+            .panel-body
+              img.img-responsive(src='../static/image/bestseller.png')
+        .col-xs-4
+          .panel.panel-default
+            .panel-body
+              img.img-responsive(src='../static/image/hours.png')
+        .col-xs-4
+          .panel.panel-default
+            .panel-body
+              img.img-responsive(src='../static/image/faq.png')
+      
+      .home-headline
+        span Featured Book
+      hr(style='margin-top: -15px;')
+      .row
+        #featured-books.carousel.slide(data-ride='carousel')
+          // Indicators
+          ol.carousel-indicators
+            li.active(data-target='#featured-books', data-slide-to='0')
+            li(data-target='#featured-books', data-slide-to='1')
+            li(data-target='#featured-books', data-slide-to='2')
+          // Wrapper for 6 pictures slides
+          .carousel-inner(role='listbox')
+            // data-slide-to="0"
+            .item.active
+              img(src='../static/image/shelf.png')
+              .carousel-caption
+                .row
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+            // data-slide-to="1"
+            .item
+              img(src='../static/image/shelf.png')
+              .carousel-caption
+                .row
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+            // data-slide-to="2"
+            .item
+              img(src='../static/image/shelf.png')
+              .carousel-caption
+                .row
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+                  .col-xs-2
+                    img.img-responsive(src='../static/image/book1.png')
+            // Controls
+            a.left.carousel-control(href='##featured-books', role='button', data-slide='prev')
+              span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+              span.sr-only Previous
+            a.right.carousel-control(href='##featured-books', role='button', data-slide='next')
+              span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+              span.sr-only Next
+      
+
+      //
+        Bootstrap core JavaScript
+        ==================================================
+      // Placed at the end of the document so the pages load faster
+      script(src='../static/js/jquery.min.js')
+      script(src='../static/js/bootstrap.min.js')
